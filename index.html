@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MiMC Hash Challenge</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    
+  </head>
+  <body>
+
+<div class="jumbotron bg-transparent mb-0 radius-0">
+  <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <h1 class="display-2">MiMC Hash Challeng<span class="vim-caret">e</span></h1>
+
+          <h2 class="display-3 mt-5">Details</h2>
+          <p class="mt-1 text-grey text-spacey">
+          The <a href="https://ethereum.org" target="_blank">Ethereum Foundation</a> is offering rewards for finding collisions in MiMCSponge, a <a href="https://en.wikipedia.org/wiki/Sponge_function" target="_blank">sponge construction</a> instantiated with MiMC-Feistel over a prime field, targeting 128-bit security:
+          <table class="table table-hover table-striped ht-tm-element">
+            <tbody>
+              <tr>
+                <td>Field prime</td>
+                <td class="text-grey text-spacey">21888242871839275222246405745257275088548364400416034343698204186575808495617</td>
+              </tr>
+              <tr>
+                <td>Rounds</td>
+                <td class="text-grey text-spacey">220</td>
+              </tr>
+              <tr>
+                <td>Exponent</td>
+                <td class="text-grey text-spacey">5</td>
+              </tr>
+              <tr>
+                <td>r</td>
+                <td class="text-grey text-spacey">1</td>
+              </tr>
+              <tr>
+                <td>c</td>
+                <td class="text-grey text-spacey">1</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="mt-1 text-grey text-spacey">
+            Rewards will be given for the following results:
+          </p>
+          <table class="table table-hover table-striped ht-tm-element">
+            <tbody>
+              <tr>
+                <td>Collisions on the proposed 220 rounds, targeting 128-bit security</td>
+                <td class="text-grey text-spacey">$20,000</td>
+              </tr>
+              <tr>
+                <td>Collisions on reduced rounds, targeting 80-bit security</td>
+                <td class="text-grey text-spacey">$10,000</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 class="display-3 mt-5">Reference code</h2>
+          <p class="mt-1 text-grey text-spacey">
+          Reference code for MiMCSponge exists in the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge.js">circomlib</a> code base, where the constants for the hash are generated using <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_printconstants.js" target="_blank">this code</a>. Participants are also encouraged to examine the <a href="https://github.com/iden3/circomlib/blob/master/circuits/mimcsponge.circom" target="_blank">MiMCSponge circuit code</a> and the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_gencontract.js" target="_blank">MiMCSponge EVM bytecode</a>. Rewards for significant bugs in these may also be offered.
+          </p>
+
+          <h2 class="display-3 mt-5">Submissions</h2>
+          <p class="mt-1 text-grey text-spacey">
+          Submissions should be sent to <a href="mailto:mimcchallenge@ethereum.org">mimcchallenge@ethereum.org</a> by February 1st 2020, and rewards will be given in USD, ETH or DAI. Submissions can not be anonymous.
+          </p>
+          <h2 class="display-3 mt-5">Introduction</h2>
+          <p class="mt-1 text-grey text-spacey">
+          Ethereum added support for BN254, a pairing-friendly elliptic-curve, in the <a href="https://github.com/ethereum/EIPs/pull/213">Byzantium hard-fork</a>, making it possible to verify SNARKs in a smart contract. Many applications use hashes both inside SNARKs and in smart contract, calling for a hash function that is efficient in both cases.
+          </p>
+
+          <p class="mt-1 text-grey text-spacey">
+          MiMC has been initially introduced in <a href="https://eprint.iacr.org/2016/492.pdf" target="_blank">a paper from 2016</a>, as a cryptographic primitive with low multiplicative complexity, making it attractive for SNARKs, such as <a href="https://eprint.iacr.org/2016/260.pdf" target="_blank">Groth16</a>. One particular use of interest is a hash function based on a sponge construction instantiated with MiMC-Feistel permutation over a prime field.
+          </p>
+
+          <p class="mt-1 text-grey text-spacey">
+          While more low multiplicative complexity hash function have been published, MiMC is the earliest of the bunch and is already used in some applications on Ethereum.
+          </p>
+
+
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
