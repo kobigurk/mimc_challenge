@@ -29,8 +29,41 @@
           <table class="table table-hover table-striped ht-tm-element">
             <tbody>
               <tr>
+                <td>Curve name</td>
+                <td class="text-grey text-spacey">BN254</td>
+              </tr>
+              <tr>
                 <td>Field prime</td>
                 <td class="text-grey text-spacey">21888242871839275222246405745257275088548364400416034343698204186575808495617</td>
+              </tr>
+              <tr>
+                <td>Rounds</td>
+                <td class="text-grey text-spacey">220</td>
+              </tr>
+              <tr>
+                <td>Exponent</td>
+                <td class="text-grey text-spacey">5</td>
+              </tr>
+              <tr>
+                <td>r</td>
+                <td class="text-grey text-spacey">1</td>
+              </tr>
+              <tr>
+                <td>c</td>
+                <td class="text-grey text-spacey">1</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-hover table-striped ht-tm-element">
+            <tbody>
+              <tr>
+                <td>Curve name</td>
+                <td class="text-grey text-spacey">BLS12-381</td>
+              </tr>
+              <tr>
+                <td>Field prime</td>
+                <td class="text-grey text-spacey">52435875175126190479447740508185965837690552500527637822603658699938581184513</td>
               </tr>
               <tr>
                 <td>Rounds</td>
@@ -57,27 +90,31 @@
           <table class="table table-hover table-striped ht-tm-element">
             <tbody>
               <tr>
-                <td>Collisions on the proposed 220 rounds, targeting 128-bit security</td>
+                <td>Collisions on the proposed 220 rounds, on either of the curves, targeting 128-bit security</td>
                 <td class="text-grey text-spacey">$20,000</td>
               </tr>
               <tr>
-                <td>Collisions on reduced rounds, targeting 80-bit security</td>
+                <td>Collisions on >=138 rounds, on either of the curves, targeting 80-bit security</td>
                 <td class="text-grey text-spacey">$10,000</td>
               </tr>
             </tbody>
           </table>
           <h2 class="display-3 mt-5">Reference code</h2>
           <p class="mt-1 text-grey text-spacey">
-          Reference code for MiMCSponge exists in the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge.js">circomlib</a> code base, where the constants for the hash are generated using <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_printconstants.js" target="_blank">this code</a>. Participants are also encouraged to examine the <a href="https://github.com/iden3/circomlib/blob/master/circuits/mimcsponge.circom" target="_blank">MiMCSponge circuit code</a> and the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_gencontract.js" target="_blank">MiMCSponge EVM bytecode</a>. Rewards for significant bugs in these may also be offered.
+          Reference code for MiMCSponge on BN254 exists in the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge.js">circomlib</a> code base, where the constants for the hash are generated using <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_printconstants.js" target="_blank">this code</a>. Participants are also encouraged to examine the <a href="https://github.com/iden3/circomlib/blob/master/circuits/mimcsponge.circom" target="_blank">MiMCSponge circuit code</a>, the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_gencontract.js" target="_blank">MiMC-Feistel EVM bytecode</a> and the <a href="https://github.com/kobigurk/semaphore/blob/master/semaphorejs/contracts/MerkleTreeLib.sol#L66" target="_blank">MiMCSponge Solidity code</a>. Rewards for significant bugs in these may also be offered.
           </p>
 
           <h2 class="display-3 mt-5">Submissions</h2>
           <p class="mt-1 text-grey text-spacey">
-          Submissions should be sent to <a href="mailto:mimcchallenge@ethereum.org">mimcchallenge@ethereum.org</a> by February 1st 2020, and rewards will be given in USD, ETH or DAI. Submissions can not be anonymous.
+          Submissions should be sent to <a href="mailto:mimcchallenge@ethereum.org">mimcchallenge@ethereum.org</a>, and rewards will be given in USD, ETH or DAI. Submissions can not be anonymous.
           </p>
           <h2 class="display-3 mt-5">Introduction</h2>
           <p class="mt-1 text-grey text-spacey">
-          Ethereum added support for BN254, a pairing-friendly elliptic-curve, in the <a href="https://github.com/ethereum/EIPs/pull/213">Byzantium hard-fork</a>, making it possible to verify SNARKs in a smart contract. Many applications use hashes both inside SNARKs and in smart contract, calling for a hash function that is efficient in both cases.
+          Ethereum added support for BN254, a pairing-friendly elliptic-curve, in the <a href="https://github.com/ethereum/EIPs/pull/213">Byzantium hard-fork</a>, making it possible to verify SNARKs in a smart contract. Many applications use hashes both inside SNARKs and in smart contracts, calling for a hash function that is efficient in both cases.
+          </p>
+
+          <p class="mt-1 text-grey text-spacey">
+          Protocol Labs are using BLS12-381, a pairing-friendly elliptic-curve introduced by the ECC team. 
           </p>
 
           <p class="mt-1 text-grey text-spacey">
