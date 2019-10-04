@@ -25,13 +25,23 @@
 
           <h2 class="display-3 mt-5">Details</h2>
           <p class="mt-1 text-grey text-spacey">
-          The <a href="https://ethereum.org" target="_blank">Ethereum Foundation</a> is offering rewards for finding collisions in MiMCSponge, a <a href="https://en.wikipedia.org/wiki/Sponge_function" target="_blank">sponge construction</a> instantiated with MiMC-Feistel over a prime field, targeting 128-bit security:
+          The <a href="https://ethereum.org" target="_blank">Ethereum Foundation</a> is offering rewards for finding collisions in MiMCSponge, a <a href="https://en.wikipedia.org/wiki/Sponge_function" target="_blank">sponge construction</a> instantiated with MiMC-Feistel over a prime field, targeting 128-bit and 80-bit security, on one of two curves described below. Rewards will be given for the following results:
           <table class="table table-hover table-striped ht-tm-element">
             <tbody>
               <tr>
-                <td>Curve name</td>
-                <td class="text-grey text-spacey">BN254</td>
+                <td>Collisions on the proposed 220 rounds, on either of the curves, targeting 128-bit security</td>
+                <td class="text-grey text-spacey">$20,000</td>
               </tr>
+              <tr>
+                <td>Collisions on >=138 rounds, on either of the curves, targeting 80-bit security</td>
+                <td class="text-grey text-spacey">$10,000</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="display-4 mt-5">BN254</h3>
+          <table class="table table-hover table-striped ht-tm-element">
+            <tbody>
               <tr>
                 <td>Field prime</td>
                 <td class="text-grey text-spacey">21888242871839275222246405745257275088548364400416034343698204186575808495617</td>
@@ -55,12 +65,9 @@
             </tbody>
           </table>
 
+          <h3 class="display-4 mt-5">BLS12-381</h3>
           <table class="table table-hover table-striped ht-tm-element">
             <tbody>
-              <tr>
-                <td>Curve name</td>
-                <td class="text-grey text-spacey">BLS12-381</td>
-              </tr>
               <tr>
                 <td>Field prime</td>
                 <td class="text-grey text-spacey">52435875175126190479447740508185965837690552500527637822603658699938581184513</td>
@@ -84,21 +91,6 @@
             </tbody>
           </table>
 
-          <p class="mt-1 text-grey text-spacey">
-            Rewards will be given for the following results:
-          </p>
-          <table class="table table-hover table-striped ht-tm-element">
-            <tbody>
-              <tr>
-                <td>Collisions on the proposed 220 rounds, on either of the curves, targeting 128-bit security</td>
-                <td class="text-grey text-spacey">$20,000</td>
-              </tr>
-              <tr>
-                <td>Collisions on >=138 rounds, on either of the curves, targeting 80-bit security</td>
-                <td class="text-grey text-spacey">$10,000</td>
-              </tr>
-            </tbody>
-          </table>
           <h2 class="display-3 mt-5">Reference code</h2>
           <p class="mt-1 text-grey text-spacey">
           Reference code for MiMCSponge on BN254 exists in the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge.js">circomlib</a> code base, where the constants for the hash are generated using <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_printconstants.js" target="_blank">this code</a>. Participants are also encouraged to examine the <a href="https://github.com/iden3/circomlib/blob/master/circuits/mimcsponge.circom" target="_blank">MiMCSponge circuit code</a>, the <a href="https://github.com/iden3/circomlib/blob/master/src/mimcsponge_gencontract.js" target="_blank">MiMC-Feistel EVM bytecode</a> and the <a href="https://github.com/kobigurk/semaphore/blob/master/semaphorejs/contracts/MerkleTreeLib.sol#L66" target="_blank">MiMCSponge Solidity code</a>. Rewards for significant bugs in these may also be offered.
